@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>HTML Page</title>
+	<link rel="stylesheet" type="text/css" href="fixed.vert.css" />
+  </head>
+  <body>
+    <div id="container">
+	    <div id="header">
+		    <h1>Vertical Navigation</h1>
+		</div>
+	    <div id="left">
+		</div>
+		<div id="right" class="fixed-vertical-container">
+		    <div class="fixed-vertical">
+			    <h2>Menu</h2>
+				<ul>
+				    <li><a href="#">Link 1</a></li>
+					<li><a href="#">Link 2</a></li>
+					<li><a href="#">Link 3</a></li>
+				</ul>
+			</div>
+		</div>
+		<div id="footer">
+		
+		</div>
+	</div>
+  
+    <script type="text/javascript" src="https://www.e-adm.com/js/jquery/jquery-1.11.1.min.js"></script>
+    <script src="fixed.vert.js"></script>
+	<script type="text/javascript">
+	    $(function(){
+		    var $fixed = $('.fixed-vertical');
+
+            $fixed.fixedVert({
+            	container: $('.fixed-vertical-container'),
+            	boundingElementTop: $('#header'),
+            	boundingElementBottom: $('#footer')
+            });
+
+			var $container = $('.fixed-vertical-container');
+			var padding = parseInt($container.css('padding-top'));
+			
+			var $boundingElementTop = $('#header');
+			var topBoundary = $boundingElementTop.offset().top + $boundingElementTop.outerHeight() + padding;
+			
+			var $boundingElementBottom = $('#footer');
+			var bottomBoundary = $boundingElementBottom.offset().top - $fixed.outerHeight() - padding;
+			
+			$fixed.css({
+			    position: 'absolute',
+				left: $fixed.offset().left,
+				top: topBoundary
+			});
+			
+			var windowTop = window.pageYOffset,
+			    timeout,
+                fixedHeight = $fixed.outerHeight();
+
+            //moveFixedElement();
+
+			$(document).on('scroll', function () {
+				//moveFixedElement();
+			});
+
+			function moveFixedElement() {
+                clearTimeout(timeout);
+
+				timeout = setTimeout(function(){
+                    windowTop = window.pageYOffset;
+				
+	                var top;
+
+					if(windowTop > topBoundary) {
+	                    top = windowTop + padding;
+
+					    var fixedBottom = top + fixedHeight - padding;
+					
+					    if(fixedBottom > bottomBoundary) {
+							top = bottomBoundary - (padding * 6)
+						}
+					}
+					else {
+					    top = topBoundary;
+					}
+
+					//$fixed.css('top', top);
+					$fixed.animate({'top': top}, 500);
+				}, 100);
+			}
+		});
+	</script>
+  </body>
+</html>

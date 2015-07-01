@@ -1,3 +1,13 @@
 ul {
 	list-style: none;
+	font-family: "Segoe UI", Verdana, sans-serif;
+}
+
+li {
+	border-top: 1px solid #888;
+
+}
+
+.tree-node-toggle {
+	color: blue;
 }

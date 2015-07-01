@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Treeview</title>
+		<link rel="stylesheet" href="css/styles.css" />
+	</head>
+    <body>
+    	<div id="tree">
+    	    <ul>
+    	    	<li>
+    	    		<a href="#" class="tree-node-toggle">Drill down</a>
+    	    		<ul>
+    	    			<li>Category</li>
+    	    			<li>Subcategory</li>
+    	    			<li>
+    	    				<a href="#" class="tree-node-toggle">
+    	    					Another Level
+    	    				</a>
+    	    					<ul>
+    	    						<li>Third level</li>
+    	    						<li>Lorem Ipsum</li>
+    	    						<li>
+    	    							<a href="#" class="tree-node-toggle">Dolor Set</a>
+    	    							<ul>
+    	    								<li>Omega</li>
+    	    							</ul>
+    	    						</li>
+    	    					</ul>
+    	    				</a>
+    	    			</li>
+    	    			<li>2nd to last</li>
+    	    			<li>Last item</li>
+    	    		</ul>
+    	    	</li>
+    	    	<li>Root Node</li>
+    	    	<li>
+    	    		<a href="#" class="tree-node-toggle">Another node</a>
+    	    		<ul>
+    	    			<li>Fender</li>
+    	    			<li>Gibson</li>
+    	    			<li>Taylor</li>
+    	    		</ul>
+    	    	</li>
+    	    	<li>Empty li</li>
+    	    	<li>Some other text</li>
+    	    </ul>
+    	</div>
+
+    	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.0.min.js"></script>
+    	<script src="treeview.js"></script>
+    	<script type="text/javascript">
+            (function(){
+                $('#tree').TreeView();
+            })();
+    	</script>
+    </body>
+</html>

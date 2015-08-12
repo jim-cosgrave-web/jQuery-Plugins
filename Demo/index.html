@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>jQuery Plugin Demo</title>
+		<link rel="stylesheet" href="" />
+        <style>
+            body {
+                font-family: verdana;
+                font-size: .8em;
+
+            }
+
+            .row {
+                margin-left: -15px;
+                margin-right: -15px;
+            }
+
+            .col {
+                display: inline-block;
+                width: 27%;
+                vertical-align: top;
+                padding: 15px;
+                border-radius: 10px;
+                color: #fff;
+            }
+        </style>
+	</head>
+    <body>
+        <img width="400px" src="riley.jpg" class="img" title="Sideways Riley!"></a>
+
+        <div class="row">
+            <div class="col" style="background: rgb(161, 43, 43);">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero vitae quis aliquid odit facilis, cumque iusto dignissimos, officiis architecto quae incidunt illo perferendis unde reprehenderit alias magnam, nisi qui! Officia?</div>
+            <div class="col" style="background: rgb(40, 40, 105);">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus dolorum, unde, in repudiandae tenetur perspiciatis quisquam magni, tempora excepturi doloremque quos, totam corporis laborum nobis vero. Voluptas ratione ullam dolor.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate mollitia expedita, perspiciatis dolores numquam magni nesciunt eum quos placeat, vel ullam delectus error eveniet eaque. Eum quidem esse ipsa explicabo.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque similique aut quaerat ea dicta, incidunt temporibus tempore porro, </div>
+            <div class="col" style="background: rgb(73, 64, 64);">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis animi minima neque adipisci deleniti quas asperiores, nesciunt iste tempore repudiandae Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis voluptatibus placeat voluptate, ad necessitatibus autem et temporibus maxime reiciendis ullam cum dolore blanditiis voluptates. Necessitatibus aperiam tempore, suscipit quisquam sunt.</div>
+        </div>
+
+    	<a href="https://www.youtube.com/watch?v=FdJINb0breE" target="_blank">Head First Into Plugin Development</a>
+    	
+    	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.0.min.js" target="_blank"></script>
+        <script src="demo.js"></script>
+        <script>
+            $('.row').equalizeHeight({
+                columnClass: '.col'
+            });
+        </script>
+    </body>
+</html>	

@@ -8,6 +8,7 @@
 		this.element = element;
 		this.$element = $(element);
 		this.$window = $(window);
+		this.$document = $(document);
 		this.settings = $.extend( {}, defaults, options );
 		this._defaults = defaults;
 		this._name = pluginName;
@@ -20,6 +21,7 @@
 			this.cacheModals();
 			this.hideModals();
 			this.positionModals();
+			this.addCloseButton();
 			this.createOverlay();
 			this.registerEvents();
 		},
@@ -45,8 +47,25 @@
 				});
 			});
 		},
+		addCloseButton: function () {	
+			var modals = $('.modal:not([data-modal-no-close])')
+
+			$.each(modals, function () {
+				var $close = $('<div class="cat-modal-close">x</div>');
+
+				$close.css({
+					position: 'absolute',
+					top: '5px',
+					right: '9px',
+					cursor: 'pointer'
+				});
+
+				$(this).append($close);
+			});
+		},
 		createOverlay: function () {
-			var $elem = $('#cat-modal-overlay');
+			var $elem = $('#cat-modal-overlay'),
+			    self = this;
 
 			if($elem.length === 0) {
 				$elem = $('<div id="cat-modal-overlay" />');
@@ -63,6 +82,10 @@
 				});
 
 				$('body').append($elem);
+
+				$elem.on('click', function(){
+					self.hideModals();
+				});
 
 				this.overlay = $elem;
 			}
@@ -90,10 +113,14 @@
 				});
 			});
 
-			$(document).keyup(function(e) {
+			self.$document.keyup(function(e) {
 			     if (e.keyCode == 27) { // escape key maps to keycode `27`
 			        self.hideModals();
 			    }
+			});
+
+			self.$document.on('click', '.cat-modal-close', function(){
+				self.hideModals();
 			});
 		}
 	});

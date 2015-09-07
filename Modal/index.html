@@ -8,11 +8,20 @@
 	</head>
     <body>
     	
-        <input type="button" id="btn-show" value="Show Modal" data-modal-trigger data-target="main-modal" data-action="show" />
-        <input type="button" id="btn-hide" value="Hide Modal" data-modal-trigger data-target="main-modal" data-action="hide" />
+        <input type="button" id="btn-show" value="Show Modal" data-modal-trigger data-target="main-modal" data-action="fadeIn" />
+        <input type="button" id="btn-show2" value="Show Modal" data-modal-trigger data-target="second-modal" data-action="show" />
+        
 
-        <div id="main-modal" class="modal">
+        <div id="main-modal" class="modal" data-modal-no-close>
             This is a modal popup
+            <br />
+            <br />
+            <input type="button" id="btn-hide" value="Hide Modal" data-modal-trigger data-target="main-modal" data-action="fadeOut" />
+        </div>
+
+        <div id="second-modal" class="modal">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia sed deleniti enim porro eaque, deserunt laudantium! Ab tempore, voluptas incidunt veniam repellendus voluptatibus commodi, ea, dignissimos quis quaerat dolorum itaque.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum beatae praesentium nihil aspernatur vel soluta eos et doloribus deleniti voluptas cumque ex, asperiores, autem minus qui facere! Quo sunt, velit!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur fugiat, accusantium velit reiciendis doloremque, hic itaque ullam. Voluptatum et ipsam quaerat accusantium maiores ab animi, ad numquam dolorum qui dolor!</p>
         </div>
 
     	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.0.min.js"></script>

@@ -17,4 +17,10 @@ body {
 
 #main-modal {
 	width: 500px;
+	display: none;
+}
+
+#second-modal {
+	width: 500px;
+	display: none;
 }

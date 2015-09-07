@@ -1,0 +1,20 @@
+.clearfix:before, .clearfix:after { content: ""; display: table; }
+.clearfix:after { clear: both; }
+.clearfix { *zoom: 1; }
+
+body {
+	font-family: Verdana;
+}
+
+.modal {
+	background: #fff;
+	padding: 1em;
+	border: 1px solid #888;
+	border-radius: 5px;
+	z-index: 999999;
+	position: absolute;
+}
+
+#main-modal {
+	width: 500px;
+}

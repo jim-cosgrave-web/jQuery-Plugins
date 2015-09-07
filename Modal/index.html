@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Modal</title>
+		<link rel="stylesheet" href="css/modal.css" />
+	</head>
+    <body>
+    	
+        <input type="button" id="btn-show" value="Show Modal" data-modal-trigger data-target="main-modal" data-action="show" />
+        <input type="button" id="btn-hide" value="Hide Modal" data-modal-trigger data-target="main-modal" data-action="hide" />
+
+        <div id="main-modal" class="modal">
+            This is a modal popup
+        </div>
+
+    	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.0.min.js"></script>
+    	<script src="js/modal.js"></script>
+    	<script type="text/javascript">
+            (function(){
+                $('.modal').Modal();
+            })();
+    	</script>
+    </body>
+</html>
